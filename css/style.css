@@ -1,0 +1,21 @@
+
+
+#table-id th , #table-id td{
+    text-align: center;
+}
+
+#table-id tr:nth-child(even){
+    background-color: #BEF2F5
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+
+.pagesize{
+	
+	margin-bottom:5px;
+}
+
+
+.container { margin-top:150px;}
