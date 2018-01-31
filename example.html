@@ -1,0 +1,175 @@
+﻿<!--
+
+This library is a bit weird but is simple.
+
+Copy paste paginator and page size ddl.
+
+generatePages is the only method to use in the javascript.
+
+generatePages(tbl_Body_id, paginator_id, pagesizeddl_id)
+
+NOTE:   tbl_body should have the first <tr> element as blank. This is because
+        the javascript starts being weird on the first element and its best to skip it.
+        I dont know why but I cant fix this. I hate javascript tbh.
+    
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="js.js"></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>jPages Example</h1>
+    <hr />
+    <div>
+        <table id="tbl_main" class="table table-striped">
+            <thead id="tbl_main_head">
+                <tr>
+                    <th>DEFENSE</th>
+                    <th>OF</th>
+                    <th>THE</th>
+                    <th>ANCIENTS</th>
+                </tr>
+            </thead>
+            <tbody id="tbl_main_body">
+                <tr style="display:none"></tr>
+                <tr>
+                    <td>Bloodseeker</td>
+                    <td>Bloodseeker</td>
+                    <td>Bloodseeker</td>
+                    <td>Bloodseeker</td>
+                </tr>
+                <tr>
+                    <td>Jakiro</td>
+                    <td>Jakiro</td>
+                    <td>Jakiro</td>
+                    <td>Jakiro</td>
+                </tr>
+                <tr>
+                    <td>Kunkka</td>
+                    <td>Kunkka</td>
+                    <td>Kunkka</td>
+                    <td>Kunkka</td>
+                </tr>
+                <tr>
+                    <td>Visage</td>
+                    <td>Visage</td>
+                    <td>Visage</td>
+                    <td>Visage</td>
+                </tr>
+                <tr>
+                    <td>Nevermore</td>
+                    <td>Nevermore</td>
+                    <td>Nevermore</td>
+                    <td>Nevermore</td>
+                </tr>
+                <tr>
+                    <td>Rhasta</td>
+                    <td>Rhasta</td>
+                    <td>Rhasta</td>
+                    <td>Rhasta</td>
+                </tr>
+                <tr>
+                    <td>Shadow Demon</td>
+                    <td>Shadow Demon</td>
+                    <td>Shadow Demon</td>
+                    <td>Shadow Demon</td>
+                </tr>
+                <tr>
+                    <td>Axe</td>
+                    <td>Axe</td>
+                    <td>Axe</td>
+                    <td>Axe</td>
+                </tr>
+                <tr>
+                    <td>Meepo</td>
+                    <td>Meepo</td>
+                    <td>Meepo</td>
+                    <td>Meepo</td>
+                </tr>
+                <tr>
+                    <td>Templar Assassin</td>
+                    <td>Templar Assassin</td>
+                    <td>Templar Assassin</td>
+                    <td>Templar Assassin</td>
+                </tr>
+                <tr>
+                    <td>Antimage</td>
+                    <td>Antimage</td>
+                    <td>Antimage</td>
+                    <td>Antimage</td>
+                </tr>
+                <tr>
+                    <td>Tidehunter</td>
+                    <td>Tidehunter</td>
+                    <td>Tidehunter</td>
+                    <td>Tidehunter</td>
+                </tr>
+                <tr>
+                    <td>Bane</td>
+                    <td>Bane</td>
+                    <td>Bane</td>
+                    <td>Bane</td>
+                </tr>
+                <tr>
+                    <td>Chen</td>
+                    <td>Chen</td>
+                    <td>Chen</td>
+                    <td>Chen</td>
+                </tr>
+                <tr>
+                    <td>Leshrac</td>
+                    <td>Leshrac</td>
+                    <td>Leshrac</td>
+                    <td>Leshrac</td>
+                </tr>
+                <tr>
+                    <td>Lina</td>
+                    <td>Lina</td>
+                    <td>Lina</td>
+                    <td>Lina</td>
+                </tr>
+                <tr>
+                    <td>Crystal Maiden</td>
+                    <td>Crystal Maiden</td>
+                    <td>Crystal Maiden</td>
+                    <td>Crystal Maiden</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class='pagination-container'>
+        <table id='pagination-table'>
+            <tr>
+                <td>
+                    <span class="pagination" id='paginator'>
+                        <!--	Here the JS Function Will Add the Rows -->
+                    </span>
+                </td>
+                <td>
+                    <select class="form-control pagesize" name="state" id="pagesize_ddl">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="100">100</option>
+                        <option value="300">300</option>
+                        <option value="50000">All</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+    $(function () {
+        generatePages('#tbl_main_body', '#paginator', '#pagesize_ddl');
+    });
+</script>
