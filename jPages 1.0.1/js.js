@@ -30,7 +30,7 @@ function create(){
 	$('.pagination').html('');						
 	var trnum = 0;									
 	var maxRows = parseInt($(pagesizeddl).val());	
-	var totalRows = $(table + '>tr').length;
+	var totalRows = $(table + ' tr').length - 2;
 	$(table + ' tr:gt(0)').each(function () {
 	    trnum++;
 	 	if (trnum > maxRows ){						
@@ -40,8 +40,8 @@ function create(){
 	 	}
 	 });											
 	 if (totalRows > maxRows){						
-	 	var pagenum = Math.ceil(totalRows/maxRows);	
-	 	for (var i = 1; i < pagenum ;){			
+	 	var pagenum = totalRows/maxRows;	
+	 	for (var i = 1; i < pagenum + 1 ;){			
 	 	    $('.pagination').append('<a href="#" class="btn page-num" data-page="' + i + '">\
 						      <span>' + i++ + '</span>\
 						    </a>').show();
