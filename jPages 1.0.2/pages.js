@@ -52,16 +52,16 @@ function create_pages() {
 		 if (totalRows > maxRows){						
 		 	var pagenum = Math.ceil(totalRows/maxRows);								
 		 	for (var i = 1; i <= pagenum ;){			
-		 	$('.pagination').append('<a class="btn page-num" data-page="' + i + '">\
+                  $(paginator).append('<a class="btn page-num" data-page="' + i + '">\
 					      <span>' + i++ + '</span>\
 					    </a>').show();
 		 	}											
 		 }
-		$('.pagination a:first-child').addClass('selected-page');
-		$('.pagination a').on('click',function(){		
+		$(paginator + ' a:first-child').addClass('selected-page');
+        $(paginator+ ' a').on('click',function(){		
 			pageNum = $(this).attr('data-page');	
 			var trIndex = 0 ;						
-			$('.pagination a').removeClass('selected-page');
+            $(paginator +' a').removeClass('selected-page');
 			$(this).addClass('selected-page');					
 			$(table+' tr:gt(0)').each(function(){		
 			 	trIndex++;								
