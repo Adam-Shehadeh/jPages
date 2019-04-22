@@ -1,0 +1,58 @@
+
+
+#table-id th , #table-id td{
+    text-align: center;
+}
+
+#table-id tr:nth-child(even){
+    background-color: #BEF2F5
+}
+
+.pagination{
+
+}
+.pagination li:hover{
+    cursor: pointer;
+    text-decoration:none;
+    background-color:#B2DFDB;
+}
+
+.page-num{
+    display:inline-block;
+    width:45px;
+    text-align:center;
+    cursor:pointer;
+    text-decoration:none;
+    color:black;
+}
+
+.page-num:hover{
+    display:inline-block;
+    width:45px;
+    cursor:pointer;
+    text-decoration:none;
+    background-color: lightgray;
+    color: black;
+}
+
+.selected-page, .selected-page:visited{
+    background-color:black;
+    color: white;
+    text-decoration:none;
+}
+
+.pagesize{	
+	margin-bottom:0px;
+}
+
+li:active{
+    background-color:black !important;
+    color:red !important;
+}
+.sortable_header{
+	cursor:pointer;
+}
+
+.selected_sortable_header{
+	border-bottom:solid 2px black !important;
+}
